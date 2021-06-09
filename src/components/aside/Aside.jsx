@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 import {GiHamburgerMenu} from 'react-icons/gi'
 
 const Aside = () => {
     return (
         <StyledAside>
-            <Logo>
+            <Logo to='header' spy={true} smooth={true}>
                 <CompanyLogo />
             </Logo>
             <GiHamburgerMenu />
@@ -14,7 +15,7 @@ const Aside = () => {
 
 export default Aside
 
-const Logo = styled.div`
+const Logo = styled(Link)`
     cursor:pointer;
     width:120px;
     height:40px;
@@ -22,7 +23,7 @@ const Logo = styled.div`
 `;
 
 const CompanyLogo = styled.div`
-    background: url('./image/logo.png');
+    background: url('./image/P_logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     width:100%;
@@ -30,12 +31,13 @@ const CompanyLogo = styled.div`
 `;
 
 const StyledAside = styled.div`
+    z-index:200;
     position:fixed;
     box-sizing: border-box;
     width:100%;
     display:flex;
     justify-content: space-between;
-    background-color: ${({theme}) => theme.colors.black1};
+    background-color: transparent;
     padding: 3%;
 
     > svg {

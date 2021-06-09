@@ -33,10 +33,17 @@ const colors = {
   mint: "#1EBFD4",
 };
 
+const center = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
 const theme = {
   fontFamily,
   fontWeight,
   fontSize,
   colors,
+  center,
 };
 export default theme;
