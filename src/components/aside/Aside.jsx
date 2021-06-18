@@ -42,7 +42,7 @@ const StyledAside = styled.div`
 
     > svg {
         cursor: pointer;
-        color: white;
+        color: black;
         font-size: 30px;
     }
 `;
