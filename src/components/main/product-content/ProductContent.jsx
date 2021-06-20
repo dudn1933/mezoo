@@ -7,10 +7,10 @@ import ThirdPlusButton from './content/third/ThirdPlusButton';
 
 const ProductContent = () => {
     const { globalState } = useContext(GlobalContext);
-    const { productToggle } = globalState;
+    const { imageToggle } = globalState;
 
     return (
-        <StyledProductContent toggle={productToggle}>
+        <StyledProductContent imageToggle={imageToggle}>
             <FirstPlusButton />
             <SecondPlusButton />
             <ThirdPlusButton />
@@ -38,6 +38,6 @@ const StyledProductContent = styled.div`
 
     animation-duration: 0.8s;
     animation-timing-function: ease-in-out;
-    animation-name: ${({toggle}) => toggle.step === 3 ? contentAnimationTrue : '' };
+    animation-name: ${contentAnimationTrue};
     animation-fill-mode: forwards;
 `;

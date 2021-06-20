@@ -30,6 +30,7 @@ export default SecondPlusButton
 
 const StyledSecondPlusButton = styled.div`
     position: relative;
+    pointer-events: fill;
 
     > svg {
         border-radius: 50%;

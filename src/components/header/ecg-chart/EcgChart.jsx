@@ -6,19 +6,19 @@ const EcgChart = () => {
     const { globalState, globalDispatch } = useContext(GlobalContext);
 
     const onMouseEnter = () => {
-        console.log(globalState.productToggle)
-        globalDispatch({ type:'productChange', payload:{hidden:!globalState.productToggle.hidden, step:1}} );
+        // console.log(globalState.imageToggle)
+        // globalDispatch({ type:'productChange', payload:{hidden:!globalState.imageToggle.hidden, step:1}} );
     }
 
     const titleMouseLeave = () => {
-        console.log(globalState.productToggle)
-        // globalDispatch({ type:'productChange', payload:{hidden:!globalState.productToggle.hidden, step:1}} );
+        // console.log(globalState.imageToggle)
+        // globalDispatch({ type:'productChange', payload:{hidden:!globalState.imageToggle.hidden, step:1}} );
     }
 
     return (
         <StyledEcgChart>
             {/* 여기에 title 이 있어야 하는지? 상위 component로 올릴 수 있으면 올리는게 좋을 듯 함. 순수하게 chart 역할만 하는 component로 분리하기. */}
-            <HiCardiTitle productToggle={globalState.productToggle} onMouseEnter={onMouseEnter} onMouseLeave={titleMouseLeave}>Hi Cardi</HiCardiTitle>
+            <HiCardiTitle imageToggle={globalState.imageToggle} onMouseEnter={onMouseEnter} onMouseLeave={titleMouseLeave}>Hi Cardi</HiCardiTitle>
             <Monitor>
                 <Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 500 200">
                     <Polyline points="486.6,113.8 328.2,113.8 310.3,132.3 296,70.7 246.8,127.4 241.6,120.2 233.9,166.4 227,27.6 213.2,118.3 211.8,112.3 205.1,126.1 198.2,108.5 194.1,124.4 184.5,92.9 174.1,113 4.3,113 "/>
@@ -38,12 +38,13 @@ const HiCardiTitle = styled.div`
     left:38%;
     top:-10%;
     background-color: transparent;
-    color: ${({productToggle}) => productToggle.hidden ? `#cf227e` : `white` };
+    color: white;
+    /* color: ${({imageToggle}) => imageToggle.hidden ? `#cf227e` : `white` }; */
     font-size: 30px;
     font-weight: bold;
     transition: color 0.5s ease-in-out;
     &:hover {
-        color: ${({productToggle}) => productToggle.hidden ?  `#cf227e` : `white` }
+        color: ${({imageToggle}) => imageToggle.hidden ?  `#cf227e` : `white` }
     }
 `;
 

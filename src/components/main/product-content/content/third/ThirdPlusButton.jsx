@@ -1,4 +1,4 @@
-import styled,{keyframes} from 'styled-components'
+import styled from 'styled-components'
 import {FcPlus} from 'react-icons/fc'
 import { useContext } from 'react';
 import { GlobalContext } from '../../../../util/GlobalProvider'
@@ -29,6 +29,7 @@ export default ThirdPlusButton
 
 const StyledThirdPlusButton = styled.div`
     position: relative;
+    pointer-events: fill;
 
     > svg {        
         border-radius: 50%;

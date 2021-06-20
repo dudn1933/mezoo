@@ -1332,7 +1332,7 @@
                   )(
                     HiCardiTitle,
                     {
-                      productToggle: globalState.productToggle,
+                      imageToggle: globalState.imageToggle,
                       onMouseEnter: onMouseEnter,
                       onMouseLeave: titleMouseLeave,
                       children: "Hi Cardi",
@@ -1432,14 +1432,13 @@
     left:38%;
     top:-10%;
     background-color: transparent;
-    color: ${({ productToggle }) =>
-      productToggle.hidden ? `#cf227e` : `white`};
+    color: ${({ imageToggle }) => (imageToggle.hidden ? `#cf227e` : `white`)};
     font-size: 30px;
     font-weight: bold;
     transition: color 0.5s ease-in-out;
     &:hover {
-        color: ${({ productToggle }) =>
-          productToggle.hidden ? `#cf227e` : `white`}
+        color: ${({ imageToggle }) =>
+          imageToggle.hidden ? `#cf227e` : `white`}
     }
 `;
           _c2 = HiCardiTitle;
@@ -1712,10 +1711,10 @@
             )(
               StyledProd,
               {
-                productToggle: globalState.productToggle,
+                imageToggle: globalState.imageToggle,
                 point: globalState.point,
                 children:
-                  globalState.productToggle.step !== 3
+                  globalState.imageToggle.step !== 3
                     ? /*#__PURE__*/ Object(
                         react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__[
                           "jsxDEV"
@@ -1726,7 +1725,7 @@
                           to: "Hicardi",
                           spy: true,
                           smooth: true,
-                          productToggle: globalState.productToggle,
+                          imageToggle: globalState.imageToggle,
                           onClick: hiddenProd,
                           onMouseLeave: prodMouseLeave,
                         },
@@ -1755,7 +1754,7 @@
                               HiCardiImage,
                               {
                                 to: "",
-                                productToggle: globalState.productToggle,
+                                imageToggle: globalState.imageToggle,
                               },
                               void 0,
                               false,
@@ -1826,7 +1825,7 @@
           ].div`
     z-index: 2;
     position:fixed;
-    left: ${({ productToggle }) => (productToggle.step === 3 ? `10%` : 0)};
+    left: ${({ imageToggle }) => (imageToggle.step === 3 ? `10%` : 0)};
     right: 0;
     bottom:15%;
 
@@ -1840,23 +1839,23 @@
 
     width: 100%;
     ${({ theme }) => theme.center};
-    ${({ productToggle }) =>
-      productToggle.step === 3 ? `justify-content: start;` : null};
+    ${({ imageToggle }) =>
+      imageToggle.step === 3 ? `justify-content: start;` : null};
     background-color:transparent;
 `;
           _c3 = StyledProd;
           const HiCardiImage = Object(
             styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
           )(react_scroll__WEBPACK_IMPORTED_MODULE_1__["Link"])`
-    cursor: ${({ productToggle }) => (productToggle.hidden ? `pointer` : null)};
-    pointer-events: ${({ productToggle }) =>
-      !productToggle.hidden ? `none` : null};
+    cursor: ${({ imageToggle }) => (imageToggle.hidden ? `pointer` : null)};
+    pointer-events: ${({ imageToggle }) =>
+      !imageToggle.hidden ? `none` : null};
     background: url('./image/hicardi.png');
     background-size: cover;
     background-repeat: no-repeat;
     width:250px;
     height:160px;
-    opacity: ${({ productToggle }) => (productToggle.hidden ? 1 : 0)};
+    opacity: ${({ imageToggle }) => (imageToggle.hidden ? 1 : 0)};
     filter: drop-shadow(0 0 4px black);
 `;
           _c4 = HiCardiImage;
@@ -1869,7 +1868,7 @@
     background-repeat: no-repeat;
     width:250px;
     height:160px;
-    opacity: ${({ productToggle }) => (productToggle.hidden ? 1 : 0)};
+    opacity: ${({ imageToggle }) => (imageToggle.hidden ? 1 : 0)};
     transition: opacity 0.5s ease-in-out;
 `;
 
@@ -3958,7 +3957,7 @@
             )(
               StyledThirdPlusButton,
               {
-                hiddenState: globalState.productToggle.step,
+                hiddenState: globalState.imageToggle.step,
                 children: /*#__PURE__*/ Object(
                   react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"]
                 )(
@@ -4180,7 +4179,7 @@
             _s = __webpack_require__.$Refresh$.signature();
 
           const globalInitialState = {
-            productToggle: {
+            imageToggle: {
               hidden: false,
               step: 1,
             },
@@ -4201,7 +4200,7 @@
 
             switch (type) {
               case "productChange":
-                return { ...state, productToggle: payload };
+                return { ...state, imageToggle: payload };
 
               case "toggleChange":
                 return { ...state, toggle: payload };

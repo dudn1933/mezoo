@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { FcPlus } from 'react-icons/fc'
 import FirstContent from './FirstContent';
 import { GlobalContext } from '../../../../util/GlobalProvider';
@@ -29,6 +29,7 @@ export default FirstPlusButton;
 
 const StyledFirstPlusButton = styled.div`
     position: relative;
+    pointer-events: fill;
 
     > svg {
         border-radius: 50%;

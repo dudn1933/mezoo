@@ -1,10 +1,12 @@
 import styled from 'styled-components'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import HicardiDesc from './hicardi-desc/HicardiDesc'
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi'
+import { GlobalContext } from '../../util/GlobalProvider'
 
 // 큰 carousel slider을 만들어보자.
 const Hicardi = () => {
+    const { globalDispatch } = useContext(GlobalContext);
     const hicardiArray = new Array(5).fill('');
     const [direction, setDirection] = useState(0);
 
@@ -14,6 +16,7 @@ const Hicardi = () => {
         } else if(direction === 1 && e.target.tagName === 'polyline'){
             setDirection((direction) => direction - 1);
         }
+        globalDispatch({type: 'productChange', payload: {step:2}});
     }
 
     const hicardiDesc = () => {

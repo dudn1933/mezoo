@@ -1,10 +1,10 @@
 import { createContext, useReducer, useMemo } from 'react';
 
 const globalInitialState = {
-    productToggle : { step:1 },
+    imageToggle : { hidden: true, step:1, animation:false },
     mousePoint: {show: 0, x: 0, y: 0 },
     contentToggle: { show: false },
-    pageScrollY: { scrollY: 0, first:0, second:0 },
+    pageScrollY: { scrollY: 0, first:0, second:0, third:0},
 };
 
 const globalReducer = (state, action) => {
@@ -14,7 +14,7 @@ const globalReducer = (state, action) => {
         case 'productChange':
             return {
                 ...state,
-                productToggle: payload,
+                imageToggle: payload,
             }
         case 'mousePointChange':
             return {

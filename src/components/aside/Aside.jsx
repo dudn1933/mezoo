@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+import { useContext } from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi'
+import {GlobalContext} from '../util/GlobalProvider'
 
 const Aside = () => {
+    const { globalState, globalDispatch } = useContext(GlobalContext);
+    const onClick = () => {
+
+    }
     return (
         <StyledAside>
-            <Logo to='header' spy={true} smooth={true}>
+            <Logo onClick={onClick}>
                 <CompanyLogo />
             </Logo>
             <GiHamburgerMenu />
@@ -15,7 +20,7 @@ const Aside = () => {
 
 export default Aside
 
-const Logo = styled(Link)`
+const Logo = styled.div`
     cursor:pointer;
     width:120px;
     height:40px;
