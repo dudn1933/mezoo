@@ -6,7 +6,8 @@ import {GlobalContext} from '../util/GlobalProvider'
 const Aside = () => {
     const { globalState, globalDispatch } = useContext(GlobalContext);
     const onClick = () => {
-
+        const main = document.querySelector('.main');
+        main.scrollTo({top:0, behavior:'smooth'});
     }
     return (
         <StyledAside>

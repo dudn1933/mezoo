@@ -13,27 +13,33 @@ import Footer from './components/footer/Footer';
 
 
 const App = () => {
-  const [ offsetTop, setOffsetTop ] = useState({});
   const { globalState, globalDispatch } = useContext(GlobalContext);
+  const { offsetTop } = globalState;
 
-  useEffect(() => {
+  const resize = () => {
     const prodLocation = document.querySelector(".Hicardi").offsetTop;
     const contentLocation = document.querySelector(".productContentView").offsetTop;
     const advantageLocation = document.querySelector(".advantage").offsetTop;
-    setOffsetTop({ prodLocation, contentLocation, advantageLocation });
+    globalDispatch({ type: "offsetTopChange", payload: { prodLocation: prodLocation, contentLocation: contentLocation, advantageLocation: advantageLocation }});
+  }
+
+  useEffect(() => {
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize',resize);
   }, []);
 
   const onScrollEvent = (event) => {
-    if(event.target.scrollTop < offsetTop.prodLocation) globalDispatch({ type: "productChange", payload: {hidden: true, step: 2, animation:false } });
-    else if(event.target.scrollTop < offsetTop.contentLocation) globalDispatch({ type: "productChange", payload: { hidden: false, step: 3, animation:false } });
+    if(event.target.scrollTop < offsetTop.prodLocation) globalDispatch({ type: "productChange", payload: {hidden: true, step: 1, animation:false } });
+    else if(event.target.scrollTop < offsetTop.contentLocation) globalDispatch({ type: "productChange", payload: { hidden: false, step: 3, animation:true } });
     else if(event.target.scrollTop === offsetTop.contentLocation) globalDispatch({ type: "productChange", payload: { hidden: true, step: 3, animation:true} });
-    else if(event.target.scrollTop > offsetTop.contentLocation) globalDispatch({ type: "productChange", payload: { hidden: false, step: 3, animation:false } });
+    else if(event.target.scrollTop > offsetTop.contentLocation) globalDispatch({ type: "productChange", payload: { hidden: false, step: 3, animation:true } });
   }
 
   return (
     <ThemeProvider theme={theme}>
       <Aside />
-      <StyledApp onScroll={onScrollEvent}>
+      <StyledApp className="main" onScroll={onScrollEvent}>
         <Header />
         <Hicardi />
         <ProductContentView />

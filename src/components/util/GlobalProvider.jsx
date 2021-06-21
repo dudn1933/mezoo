@@ -5,6 +5,8 @@ const globalInitialState = {
     mousePoint: {show: 0, x: 0, y: 0 },
     contentToggle: { show: false },
     pageScrollY: { scrollY: 0, first:0, second:0, third:0},
+    offsetTop: { prodLocation: 0, contentLocation: 0, advantageLocation: 0 },
+    carouselNumber: {0: '', 1:'', 2:'', 3:'', 4:'' }
 };
 
 const globalReducer = (state, action) => {
@@ -30,6 +32,16 @@ const globalReducer = (state, action) => {
             return {
                 ...state,
                 pageScrollY: payload,
+            }
+        case 'offsetTopChange':
+            return {
+                ...state,
+                offsetTop: payload
+            }
+        case 'carouselNumberRegister':
+            return {
+                ...state,
+                carouselNumber: payload
             }
         default:
             throw new Error('[Error] dispatch - global');
