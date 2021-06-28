@@ -86,6 +86,11 @@ const StyledCarousel = styled.div`
     transition: transform 0.5s ease-in-out;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const StyledHicardi = styled.div`

@@ -62,4 +62,9 @@ const StyledApp = styled.div`
   overflow:scroll;
   height:100vh;
   scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
