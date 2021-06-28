@@ -1,56 +1,65 @@
 import styled from 'styled-components';
-import {Link} from 'react-scroll';
+import { useContext } from 'react';
+import { GlobalContext } from '../../util/GlobalProvider'
+import ProductContent from '../../main/product-content/ProductContent';
 
-const Products = ({prodToggle, setProdToggle}) => {
+const Products = () => {
+    const { globalState, globalDispatch } = useContext(GlobalContext);
+
     const prodMouseLeave = () => {
-        return setProdToggle(false);
+        globalDispatch({ type:'productChange', payload: {step:1}});
     }
 
     const hiddenProd = () => {
-        setProdToggle(!prodToggle);
+        globalDispatch({ type:'productChange', payload: {step:2}});
     }
 
-
+    // 이미지 클릭시 숨기는게 아니고 성능향상을 위해서 컴포넌트를 remove 할 방법을 생각해보기.
     return (
-        <StyledProd>
-            <HiCardiImage to='Hicardi' spy={true} smooth={true} prodToggle={prodToggle} onClick={hiddenProd} onMouseLeave={prodMouseLeave}/>
-            <VetWaveImage to='Vetwave' spy={true} smooth={true} prodToggle={prodToggle} onClick={hiddenProd} onMouseLeave={prodMouseLeave} />
+        <StyledProd imageToggle={globalState.imageToggle} point={globalState.point}>
+            {globalState.imageToggle.step !== 3 
+            ? <HiCardiImage to='Hicardi' spy={true} smooth={true} 
+                            imageToggle={globalState.imageToggle} 
+                            onClick={hiddenProd} 
+                            onMouseLeave={prodMouseLeave}/> 
+            : (
+                <StyledContent>
+                    <HiCardiImage to='' imageToggle={globalState.imageToggle} />
+                    { globalState.imageToggle.animation ? <ProductContent/> : null }
+                </StyledContent>
+            )}
         </StyledProd>
     )
 }
 
 export default Products
 
-const StyledProd = styled.div`
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:15%;
-    width: 100%;
+const StyledContent = styled.div`
     display: flex;
-    ${({theme}) => theme.center};
-    justify-content: space-evenly;
-    background-color:transparent;
+    position:relative;
+    width:250px;
+    height:160px;
 `;
 
-const HiCardiImage = styled(Link)`
-    cursor: pointer;
+const StyledProd = styled.div`
+    z-index: 2;
+    pointer-events: none;
+    position:fixed;
+    opacity: ${({imageToggle}) => imageToggle.hidden ? 1 : 0};
+    left: ${({imageToggle}) => imageToggle.step === 3 ?  `10%`:  0};
+    right: 0;
+    bottom:${({imageToggle}) => imageToggle.step === 3 ?  '40%' : `15%`};
+    ${({theme}) => theme.center};
+    ${({imageToggle}) => imageToggle.step === 3 ? `justify-content: start;`: null};
+    background-color:transparent;
+    transition: ${({imageToggle}) => imageToggle.animation ? 'opacity 0.3s ease-in-out' : null};
+`;
+
+const HiCardiImage = styled.div`
     background: url('./image/hicardi.png');
     background-size: cover;
     background-repeat: no-repeat;
     width:250px;
     height:160px;
-    opacity: ${({prodToggle}) => prodToggle ? 1 : 0};
-    transition: opacity 0.3s ease-in-out;
-`;
-
-const VetWaveImage = styled(Link)`
-    cursor: pointer;
-    background: url('./image/vetwave.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:250px;
-    height:160px;
-    opacity: ${({prodToggle}) => prodToggle ? 1 : 0};
-    transition: opacity 0.3s ease-in-out;
+    filter: drop-shadow(0 0 4px black);
 `;

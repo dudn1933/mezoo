@@ -1,25 +1,27 @@
 import styled, {keyframes} from 'styled-components'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from '../../util/GlobalProvider';
 
-const EcgChart = ({prodToggle, setProdToggle, deleteComponent, setDeleteComponent}) => {
-    const [toggle,setToggle] = useState(true);
+const EcgChart = () => {
+    const { globalState, globalDispatch } = useContext(GlobalContext);
 
     const onMouseEnter = () => {
-        setProdToggle(true);
-        // setDeleteComponent(!deleteComponent);
-       return setToggle(!toggle);
+        // console.log(globalState.imageToggle)
+        // globalDispatch({ type:'productChange', payload:{hidden:!globalState.imageToggle.hidden, step:1}} );
     }
 
     const titleMouseLeave = () => {
-        return setToggle(!toggle);
+        // console.log(globalState.imageToggle)
+        // globalDispatch({ type:'productChange', payload:{hidden:!globalState.imageToggle.hidden, step:1}} );
     }
 
     return (
         <StyledEcgChart>
-            <HiCardiTitle prodToggle={prodToggle} onMouseEnter={onMouseEnter} onMouseLeave={titleMouseLeave}>Hi Cardi</HiCardiTitle>
+            {/* 여기에 title 이 있어야 하는지? 상위 component로 올릴 수 있으면 올리는게 좋을 듯 함. 순수하게 chart 역할만 하는 component로 분리하기. */}
+            <HiCardiTitle imageToggle={globalState.imageToggle} onMouseEnter={onMouseEnter} onMouseLeave={titleMouseLeave}>Hi Cardi</HiCardiTitle>
             <Monitor>
                 <Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 500 200">
-                    <Polyline toggle={toggle} points="486.6,113.8 328.2,113.8 310.3,132.3 296,70.7 246.8,127.4 241.6,120.2 233.9,166.4 227,27.6 213.2,118.3 211.8,112.3 205.1,126.1 198.2,108.5 194.1,124.4 184.5,92.9 174.1,113 4.3,113 "/>
+                    <Polyline points="486.6,113.8 328.2,113.8 310.3,132.3 296,70.7 246.8,127.4 241.6,120.2 233.9,166.4 227,27.6 213.2,118.3 211.8,112.3 205.1,126.1 198.2,108.5 194.1,124.4 184.5,92.9 174.1,113 4.3,113 "/>
                 </Svg>
             </Monitor>   
         </StyledEcgChart>
@@ -30,18 +32,17 @@ export default EcgChart;
 
 const HiCardiTitle = styled.div`
     cursor: pointer;
-    position:absolute;
-    width:110px;
+    text-align: center;
     height:30px;
-    left:38%;
-    top:-10%;
+    margin:auto;
     background-color: transparent;
-    color: ${({prodToggle}) => prodToggle ? `#cf227e` : `white`};
+    color: white;
+    /* color: ${({imageToggle}) => imageToggle.hidden ? `#cf227e` : `white` }; */
     font-size: 30px;
     font-weight: bold;
     transition: color 0.5s ease-in-out;
     &:hover {
-        color: ${({prodToggle}) => prodToggle ? `#cf227e` : `white`}
+        color: ${({imageToggle}) => imageToggle.hidden ?  `#cf227e` : `white` }
     }
 `;
 
@@ -54,11 +55,6 @@ const Monitor = styled.div`
 `;
 
 const StyledEcgChart = styled.div`
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
     margin:auto;
     width:500px;
     height:200px;

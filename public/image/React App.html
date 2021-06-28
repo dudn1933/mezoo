@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="icon" href="http://localhost:3000/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="http://localhost:3000/manifest.json" />
+
+    <title>React App</title>
+    <style>
+      /* http://meyerweb.com/eric/tools/css/reset/ */
+      /* v1.0 | 20080212 */
+
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      font,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+
+      /* remember to define focus styles! */
+      :focus {
+        outline: 0;
+      }
+
+      /* remember to highlight inserts somehow! */
+      ins {
+        text-decoration: none;
+      }
+      del {
+        text-decoration: line-through;
+      }
+
+      /* tables still need 'cellspacing="0"' in the markup */
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tbW9uL3N0eWxlL3Jlc2V0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSw4Q0FBOEM7QUFDOUMsb0JBQW9COztBQUVwQjs7Ozs7Ozs7O0lBU0ksU0FBUztJQUNULFVBQVU7SUFDVixTQUFTO0lBQ1QsVUFBVTtJQUNWLGVBQWU7SUFDZix3QkFBd0I7SUFDeEIsdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLFlBQVk7QUFDaEI7QUFDQTs7SUFFSSxXQUFXO0lBQ1gsYUFBYTtBQUNqQjs7QUFFQSxxQ0FBcUM7QUFDckM7SUFDSSxVQUFVO0FBQ2Q7O0FBRUEsMkNBQTJDO0FBQzNDO0lBQ0kscUJBQXFCO0FBQ3pCO0FBQ0E7SUFDSSw2QkFBNkI7QUFDakM7O0FBRUEsc0RBQXNEO0FBQ3REO0lBQ0kseUJBQXlCO0lBQ3pCLGlCQUFpQjtBQUNyQiIsInNvdXJjZXNDb250ZW50IjpbIi8qIGh0dHA6Ly9tZXllcndlYi5jb20vZXJpYy90b29scy9jc3MvcmVzZXQvICovXG4vKiB2MS4wIHwgMjAwODAyMTIgKi9cblxuaHRtbCwgYm9keSwgZGl2LCBzcGFuLCBhcHBsZXQsIG9iamVjdCwgaWZyYW1lLFxuaDEsIGgyLCBoMywgaDQsIGg1LCBoNiwgcCwgYmxvY2txdW90ZSwgcHJlLFxuYSwgYWJiciwgYWNyb255bSwgYWRkcmVzcywgYmlnLCBjaXRlLCBjb2RlLFxuZGVsLCBkZm4sIGVtLCBmb250LCBpbWcsIGlucywga2JkLCBxLCBzLCBzYW1wLFxuc21hbGwsIHN0cmlrZSwgc3Ryb25nLCBzdWIsIHN1cCwgdHQsIHZhcixcbmIsIHUsIGksIGNlbnRlcixcbmRsLCBkdCwgZGQsIG9sLCB1bCwgbGksXG5maWVsZHNldCwgZm9ybSwgbGFiZWwsIGxlZ2VuZCxcbnRhYmxlLCBjYXB0aW9uLCB0Ym9keSwgdGZvb3QsIHRoZWFkLCB0ciwgdGgsIHRkIHtcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDA7XG4gICAgb3V0bGluZTogMDtcbiAgICBmb250LXNpemU6IDEwMCU7XG4gICAgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lO1xuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xufVxuYm9keSB7XG4gICAgbGluZS1oZWlnaHQ6IDE7XG59XG5vbCwgdWwge1xuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG59XG5ibG9ja3F1b3RlLCBxIHtcbiAgICBxdW90ZXM6IG5vbmU7XG59XG5ibG9ja3F1b3RlOmJlZm9yZSwgYmxvY2txdW90ZTphZnRlcixcbnE6YmVmb3JlLCBxOmFmdGVyIHtcbiAgICBjb250ZW50OiAnJztcbiAgICBjb250ZW50OiBub25lO1xufVxuXG4vKiByZW1lbWJlciB0byBkZWZpbmUgZm9jdXMgc3R5bGVzISAqL1xuOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xufVxuXG4vKiByZW1lbWJlciB0byBoaWdobGlnaHQgaW5zZXJ0cyBzb21laG93ISAqL1xuaW5zIHtcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5kZWwge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbGluZS10aHJvdWdoO1xufVxuXG4vKiB0YWJsZXMgc3RpbGwgbmVlZCAnY2VsbHNwYWNpbmc9XCIwXCInIGluIHRoZSBtYXJrdXAgKi9cbnRhYmxlIHtcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICAgIGJvcmRlci1zcGFjaW5nOiAwO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */
+    </style>
+    <style data-styled="active" data-styled-version="5.3.0">
+      .jEdnQa {
+        cursor: pointer;
+        position: absolute;
+        width: 110px;
+        height: 30px;
+        left: 38%;
+        top: -10%;
+        background-color: transparent;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        -webkit-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+      }
+      .jEdnQa:hover {
+        color: white;
+      }
+      .cEzbCy {
+        cursor: pointer;
+        position: absolute;
+        width: 110px;
+        height: 30px;
+        left: 38%;
+        top: -10%;
+        background-color: transparent;
+        color: #cf227e;
+        font-size: 30px;
+        font-weight: bold;
+        -webkit-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+      }
+      .cEzbCy:hover {
+        color: #cf227e;
+      }
+      .leIRWd {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .egeNcD {
+        background-color: transparent;
+      }
+      .kKnkTV {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 500px;
+        height: 200px;
+        background-color: transparent;
+      }
+      .bDKcVL {
+        fill: none;
+        stroke: #cf227e;
+        -webkit-transition: stroke 0.3s ease-in-out;
+        transition: stroke 0.3s ease-in-out;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: miter;
+        opacity: 0;
+        stroke-dashoffset: 1000;
+        stroke-dasharray: 1000;
+        -webkit-animation: gkhKeJ 3s linear forwards infinite;
+        animation: gkhKeJ 3s linear forwards infinite;
+      }
+      .efuegl {
+        position: absolute;
+        width: 400px;
+        height: 100px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #f28e06;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .eQstcp {
+        position: relative;
+      }
+      .eQstcp > svg {
+        border-radius: 50%;
+        position: absolute;
+        left: 150px;
+        top: -70px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #f28e06;
+      }
+      .eQstcp > svg > circle {
+        fill: transparent;
+      }
+      .eQstcp > svg > g {
+        fill: #f28e06;
+      }
+      .eQstcp > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .eQstcp > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .eQstcp > svg:hover {
+        box-shadow: 0 0 8px #f28e06;
+      }
+      .gROCAy {
+        position: relative;
+      }
+      .gROCAy > svg {
+        border-radius: 50%;
+        position: absolute;
+        top: 60px;
+        right: -300px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #25aae1;
+      }
+      .gROCAy > svg > circle {
+        fill: transparent;
+      }
+      .gROCAy > svg > g {
+        fill: #25aae1;
+      }
+      .gROCAy > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .gROCAy > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .gROCAy > svg:hover {
+        box-shadow: 0 0 8px #25aae1;
+      }
+      .jPQCoA {
+        position: relative;
+      }
+      .jPQCoA > svg {
+        border-radius: 50%;
+        position: absolute;
+        right: -230px;
+        bottom: -220px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #9bd347;
+      }
+      .jPQCoA > svg > circle {
+        fill: transparent;
+      }
+      .jPQCoA > svg > g {
+        fill: #9bd347;
+      }
+      .jPQCoA > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .jPQCoA > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .jPQCoA > svg:hover {
+        box-shadow: 0 0 8px #9bd347;
+      }
+      .fFDQwb {
+        position: absolute;
+        z-index: 4;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: bPjLTP;
+        animation-name: bPjLTP;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      .jOToqp {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        width: 250px;
+        height: 160px;
+      }
+      .jVhSql {
+        z-index: 2;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15%;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .kMMVMI {
+        z-index: 2;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15%;
+        bottom: 40%;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .eUFvjr {
+        z-index: 2;
+        position: fixed;
+        left: 10%;
+        right: 0;
+        bottom: 15%;
+        bottom: 40%;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        background-color: transparent;
+      }
+      .gGFMhE {
+        z-index: 2;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15%;
+        bottom: 15%;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .bSHctL {
+        pointer-events: none;
+        background: url("./image/hicardi.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 160px;
+        opacity: 0;
+        -webkit-filter: drop-shadow(0 0 4px black);
+        filter: drop-shadow(0 0 4px black);
+      }
+      .cUSUIj {
+        cursor: pointer;
+        background: url("./image/hicardi.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 160px;
+        opacity: 1;
+        -webkit-filter: drop-shadow(0 0 4px black);
+        filter: drop-shadow(0 0 4px black);
+      }
+      .cHFwqE {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-0px);
+        -ms-transform: translateY(-0px);
+        transform: translateY(-0px);
+        background-attachment: fixed;
+      }
+      .dyPxUW {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-789px);
+        -ms-transform: translateY(-789px);
+        transform: translateY(-789px);
+        background-attachment: fixed;
+      }
+      .dSYvvo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-788.5px);
+        -ms-transform: translateY(-788.5px);
+        transform: translateY(-788.5px);
+        background-attachment: fixed;
+      }
+      .fHHBZM {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-783px);
+        -ms-transform: translateY(-783px);
+        transform: translateY(-783px);
+        background-attachment: fixed;
+      }
+      .eeyhMc {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-780.5px);
+        -ms-transform: translateY(-780.5px);
+        transform: translateY(-780.5px);
+        background-attachment: fixed;
+      }
+      .hyakUE {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-778px);
+        -ms-transform: translateY(-778px);
+        transform: translateY(-778px);
+        background-attachment: fixed;
+      }
+      .dWIPIh {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-771px);
+        -ms-transform: translateY(-771px);
+        transform: translateY(-771px);
+        background-attachment: fixed;
+      }
+      .iTlkGJ {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-767.5px);
+        -ms-transform: translateY(-767.5px);
+        transform: translateY(-767.5px);
+        background-attachment: fixed;
+      }
+      .byaEmS {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-763px);
+        -ms-transform: translateY(-763px);
+        transform: translateY(-763px);
+        background-attachment: fixed;
+      }
+      .kZwKFY {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-761px);
+        -ms-transform: translateY(-761px);
+        transform: translateY(-761px);
+        background-attachment: fixed;
+      }
+      .bWwcjG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-758px);
+        -ms-transform: translateY(-758px);
+        transform: translateY(-758px);
+        background-attachment: fixed;
+      }
+      .ejiWiB {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-757px);
+        -ms-transform: translateY(-757px);
+        transform: translateY(-757px);
+        background-attachment: fixed;
+      }
+      .fMzEyH {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-756.5px);
+        -ms-transform: translateY(-756.5px);
+        transform: translateY(-756.5px);
+        background-attachment: fixed;
+      }
+      .kbRjHk {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-759.5px);
+        -ms-transform: translateY(-759.5px);
+        transform: translateY(-759.5px);
+        background-attachment: fixed;
+      }
+      .pDbhM {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-766.5px);
+        -ms-transform: translateY(-766.5px);
+        transform: translateY(-766.5px);
+        background-attachment: fixed;
+      }
+      .dKNbpj {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-770.5px);
+        -ms-transform: translateY(-770.5px);
+        transform: translateY(-770.5px);
+        background-attachment: fixed;
+      }
+      .bNGQgX {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-783.5px);
+        -ms-transform: translateY(-783.5px);
+        transform: translateY(-783.5px);
+        background-attachment: fixed;
+      }
+      .gPldXZ {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-9px);
+        -ms-transform: translateY(-9px);
+        transform: translateY(-9px);
+        background-attachment: fixed;
+      }
+      .cDkhbb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-38px);
+        -ms-transform: translateY(-38px);
+        transform: translateY(-38px);
+        background-attachment: fixed;
+      }
+      .hfQQnE {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-124.5px);
+        -ms-transform: translateY(-124.5px);
+        transform: translateY(-124.5px);
+        background-attachment: fixed;
+      }
+      .hlYLJR {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-180px);
+        -ms-transform: translateY(-180px);
+        transform: translateY(-180px);
+        background-attachment: fixed;
+      }
+      .cwPbbZ {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-238px);
+        -ms-transform: translateY(-238px);
+        transform: translateY(-238px);
+        background-attachment: fixed;
+      }
+      .jbDJCe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-320.5px);
+        -ms-transform: translateY(-320.5px);
+        transform: translateY(-320.5px);
+        background-attachment: fixed;
+      }
+      .CEpit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-413.5px);
+        -ms-transform: translateY(-413.5px);
+        transform: translateY(-413.5px);
+        background-attachment: fixed;
+      }
+      .jCMiZL {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-501.5px);
+        -ms-transform: translateY(-501.5px);
+        transform: translateY(-501.5px);
+        background-attachment: fixed;
+      }
+      .cWjSAK {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-584.5px);
+        -ms-transform: translateY(-584.5px);
+        transform: translateY(-584.5px);
+        background-attachment: fixed;
+      }
+      .hqOuUf {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-663px);
+        -ms-transform: translateY(-663px);
+        transform: translateY(-663px);
+        background-attachment: fixed;
+      }
+      .YtCiD {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-737px);
+        -ms-transform: translateY(-737px);
+        transform: translateY(-737px);
+        background-attachment: fixed;
+      }
+      .iiPsKV {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-760px);
+        -ms-transform: translateY(-760px);
+        transform: translateY(-760px);
+        background-attachment: fixed;
+      }
+      .dzWAoN {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-742px);
+        -ms-transform: translateY(-742px);
+        transform: translateY(-742px);
+        background-attachment: fixed;
+      }
+      .iUYQYq {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        background: url("./image/background-image.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150vh;
+        -webkit-transform: translateY(-732px);
+        -ms-transform: translateY(-732px);
+        transform: translateY(-732px);
+        background-attachment: fixed;
+      }
+      .ecjAbY {
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: 100vh;
+      }
+      .lezYtd {
+        cursor: pointer;
+        width: 120px;
+        height: 40px;
+        background-color: transparent;
+      }
+      .bOApRI {
+        background: url("./image/P_logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 40px;
+      }
+      .fIRDwq {
+        z-index: 200;
+        position: fixed;
+        box-sizing: border-box;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        background-color: transparent;
+        padding: 3%;
+      }
+      .fIRDwq > svg {
+        cursor: pointer;
+        color: black;
+        font-size: 30px;
+      }
+      .kwRbCn {
+        width: 100%;
+        height: 100vh;
+        background: url(./image/hicardi-content/1.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 50%;
+      }
+      .deMpoR {
+        width: 100%;
+        height: 100vh;
+        background: url(./image/hicardi-content/2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 50%;
+      }
+      .jSoUEA {
+        width: 100%;
+        height: 100vh;
+        background: url(./image/hicardi-content/3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 50%;
+      }
+      .hlybif {
+        width: 100%;
+        height: 100vh;
+        background: url(./image/hicardi-content/4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 50%;
+      }
+      .cJEWYS {
+        width: 100%;
+        height: 100vh;
+        background: url(./image/hicardi-content/5.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 50%;
+      }
+      .cGkeSw {
+        display: grid;
+        grid-template-columns: repeat(5, 100%);
+        width: 100%;
+        height: 100vh;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        -webkit-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
+      }
+      .kUcvvY {
+        position: absolute;
+        top: 100vh;
+        -webkit-scroll-snap-align: center;
+        -moz-scroll-snap-align: center;
+        -ms-scroll-snap-align: center;
+        scroll-snap-align: center;
+        z-index: 3;
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+      }
+      .kUcvvY > svg {
+        z-index: 200;
+      }
+      .kUcvvY > svg:first-child {
+        pointer-events: none;
+        position: absolute;
+        height: 100vh;
+        left: 0;
+        font-size: 1000%;
+        color: #e5e5e5;
+      }
+      .kUcvvY > svg:last-child {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        font-size: 1000%;
+        color: #e5e5e5;
+      }
+      .kUcvvY > svg > polyline {
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .kUcvvY > svg > polyline:hover {
+        color: #cf227e;
+      }
+      .bltHGh {
+        position: absolute;
+        top: 200vh;
+        -webkit-scroll-snap-align: center;
+        -moz-scroll-snap-align: center;
+        -ms-scroll-snap-align: center;
+        scroll-snap-align: center;
+        width: 100%;
+        height: 100vh;
+        background: url("./image/hospital.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.3;
+      }
+      .cOYWYn {
+        width: 100%;
+        height: 100vh;
+      }
+      @-webkit-keyframes gkhKeJ {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        50% {
+          stroke-dashoffset: 2000;
+        }
+        85% {
+          opacity: 1;
+        }
+        99% {
+          stroke-dashoffset: 3000;
+        }
+        100% {
+          opacity: 0;
+          stroke-dashoffset: 1000;
+        }
+      }
+      @keyframes gkhKeJ {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        50% {
+          stroke-dashoffset: 2000;
+        }
+        85% {
+          opacity: 1;
+        }
+        99% {
+          stroke-dashoffset: 3000;
+        }
+        100% {
+          opacity: 0;
+          stroke-dashoffset: 1000;
+        }
+      }
+      @-webkit-keyframes bPjLTP {
+        0% {
+          opacity: 0;
+          top: 20px;
+        }
+        100% {
+          opacity: 1;
+          top: 0px;
+        }
+      }
+      @keyframes bPjLTP {
+        0% {
+          opacity: 0;
+          top: 20px;
+        }
+        100% {
+          opacity: 1;
+          top: 0px;
+        }
+      }
+      .gEwGas {
+        position: relative;
+      }
+      .gEwGas > svg {
+        border-radius: 50%;
+        position: absolute;
+        top: 60px;
+        right: -300px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #25aae1;
+      }
+      .gEwGas > svg > circle {
+        fill: transparent;
+      }
+      .gEwGas > svg > g {
+        fill: #25aae1;
+      }
+      .gEwGas > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .gEwGas > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .gEwGas > svg:hover {
+        box-shadow: 0 0 8px #25aae1;
+      }
+      .jakkNF {
+        position: relative;
+      }
+      .jakkNF > svg {
+        border-radius: 50%;
+        position: absolute;
+        right: -230px;
+        bottom: -220px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #9bd347;
+      }
+      .jakkNF > svg > circle {
+        fill: transparent;
+      }
+      .jakkNF > svg > g {
+        fill: #9bd347;
+      }
+      .jakkNF > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .jakkNF > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .jakkNF > svg:hover {
+        box-shadow: 0 0 8px #9bd347;
+      }
+      .kAOLAq {
+        position: relative;
+      }
+      .kAOLAq > svg {
+        border-radius: 50%;
+        position: absolute;
+        right: -230px;
+        bottom: -220px;
+        stroke-width: 5px;
+        font-size: 30px;
+        stroke: #9bd347;
+      }
+      .kAOLAq > svg > circle {
+        fill: transparent;
+      }
+      .kAOLAq > svg > g {
+        fill: #9bd347;
+      }
+      .kAOLAq > svg > g > rect:first-child {
+        x: 23.5px;
+        width: 0.01px;
+      }
+      .kAOLAq > svg > g > rect:last-child {
+        y: 23.5px;
+        height: 0.01px;
+      }
+      .kAOLAq > svg:hover {
+        box-shadow: 0 0 8px #9bd347;
+      }
+      .jyHxqY {
+        position: absolute;
+        width: 400px;
+        height: 100px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #25aae1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .jFXEbt {
+        position: absolute;
+        width: 400px;
+        height: 100px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #25aae1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+    </style>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.c9a058f72ec25dba423b.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.f2edb5f1eff4b97d46d0.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.fc352cd54492bd69c7d9.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.26390dc9a3c82105003e.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.0ee974be56074c07f6d6.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.9816dad6ceaa1ea46ced.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.f750547d28703bb79f60.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.1da9922485221b67ae1a.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.32ed2c1041fe01c8d174.hot-update.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="./React App_files/main.d1d8df39a62189c92609.hot-update.js"
+    ></script>
+  </head>
+  <body cz-shortcut-listen="true">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="sc-fnVZcZ fIRDwq">
+        <a class="sc-ksluID lezYtd"><div class="sc-hBMUJo bOApRI"></div></a
+        ><svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+          ></path>
+        </svg>
+      </div>
+      <div class="sc-dlMDgC cOYWYn">
+        <div id="header">
+          "
+          <div class="sc-dIsUp iUYQYq"></div>
+          <div class="sc-bqGGPW ecjAbY">
+            <div class="sc-hKFxyN kKnkTV">
+              <div class="sc-bdnxRM cEzbCy">Hi Cardi</div>
+              <div class="sc-dlnjwi egeNcD">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 500 200"
+                  class="sc-gtsrHT leIRWd"
+                >
+                  <polyline
+                    points="486.6,113.8 328.2,113.8 310.3,132.3 296,70.7 246.8,127.4 241.6,120.2 233.9,166.4 227,27.6 213.2,118.3 211.8,112.3 205.1,126.1 198.2,108.5 194.1,124.4 184.5,92.9 174.1,113 4.3,113 "
+                    class="sc-eCApnc bDKcVL"
+                  ></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="sc-kEqXSa eUFvjr">
+              <div class="sc-jrsJWt jOToqp">
+                <a imageToggle="[object Object]" class="sc-iqAclL cUSUIj"></a>
+                <div class="sc-pNWdM fFDQwb">
+                  <div class="sc-gKAaRy eQstcp">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      version="1"
+                      viewBox="0 0 48 48"
+                      enable-background="new 0 0 48 48"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle fill="#4CAF50" cx="24" cy="24" r="21"></circle>
+                      <g fill="#fff">
+                        <rect x="21" y="14" width="6" height="20"></rect>
+                        <rect x="14" y="21" width="20" height="6"></rect>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="sc-fKgJPI gEwGas">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      version="1"
+                      viewBox="0 0 48 48"
+                      enable-background="new 0 0 48 48"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle fill="#4CAF50" cx="24" cy="24" r="21"></circle>
+                      <g fill="#fff">
+                        <rect x="21" y="14" width="6" height="20"></rect>
+                        <rect x="14" y="21" width="20" height="6"></rect>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="sc-iwajpm kAOLAq">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      version="1"
+                      viewBox="0 0 48 48"
+                      enable-background="new 0 0 48 48"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle fill="#4CAF50" cx="24" cy="24" r="21"></circle>
+                      <g fill="#fff">
+                        <rect x="21" y="14" width="6" height="20"></rect>
+                        <rect x="14" y="21" width="20" height="6"></rect>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="Hicardi" direction="0" class="sc-iemWCZ kUcvvY">
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <div direction="0" class="sc-bkbkJK cGkeSw">
+            <div class="sc-fFSPTT kwRbCn"></div>
+            <div class="sc-fFSPTT deMpoR"></div>
+            <div class="sc-fFSPTT jSoUEA"></div>
+            <div class="sc-fFSPTT hlybif"></div>
+            <div class="sc-fFSPTT cJEWYS"></div>
+          </div>
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+        <div class="sc-hHEiqL bltHGh"></div>
+      </div>
+    </div>
+    <script src="./React App_files/bundle.js"></script>
+    <script src="./React App_files/vendors_main.chunk.js"></script>
+    <script src="./React App_files/main.chunk.js"></script>
+  </body>
+</html>

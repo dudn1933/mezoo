@@ -11,9 +11,12 @@ const Vetwave = () => {
 export default Vetwave
 
 const StyledVetwave = styled.div`
+    /* position:absolute;
+    top:200vh;
+    scroll-snap-align: center; */
+
+
     width:100%;
     height:100vh;
     background-color:red;
-
-    scroll-snap-align: end;
 `;

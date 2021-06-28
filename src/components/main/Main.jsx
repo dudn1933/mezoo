@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import Hicardi from './hicardi/Hicardi'
-import Vetwave from './vetwave/Vetwave'
+// import Vetwave from './vetwave/Vetwave'
 
 const Main = () => {
     return (
-        <StyledMain className="어딧냐">
+        <StyledMain>
             <Hicardi />
-            <Vetwave />
         </StyledMain>
     )
 }
@@ -20,4 +19,6 @@ const StyledMain = styled.div`
     background-color:white;
     width:100%;
     height:200vh;
+
+    scroll-snap-align: start;
 `;
