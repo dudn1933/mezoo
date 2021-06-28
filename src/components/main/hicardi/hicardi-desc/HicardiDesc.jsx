@@ -14,7 +14,7 @@ const StyledHicardiDesc = styled.div`
     background: ${({index}) => `url(./image/hicardi-content/${index+1}.jpg)`} ;
     background-repeat: no-repeat;
     background-size: ${({index}) => index+1===1 ? `contain` : `cover`};
-    background-position-x:50%;
+    background-position: center;
 
     scroll-snap-align: start;
     scroll-snap-stop: always;

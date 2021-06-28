@@ -32,11 +32,9 @@ export default EcgChart;
 
 const HiCardiTitle = styled.div`
     cursor: pointer;
-    position:absolute;
-    width:110px;
+    text-align: center;
     height:30px;
-    left:38%;
-    top:-10%;
+    margin:auto;
     background-color: transparent;
     color: white;
     /* color: ${({imageToggle}) => imageToggle.hidden ? `#cf227e` : `white` }; */
@@ -57,13 +55,6 @@ const Monitor = styled.div`
 `;
 
 const StyledEcgChart = styled.div`
-    position:relative;
-    /* position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0; */
-    /* ${({theme}) => theme.center} */
     margin:auto;
     width:500px;
     height:200px;

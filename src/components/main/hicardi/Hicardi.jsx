@@ -10,7 +10,6 @@ const Hicardi = () => {
     const { globalState, globalDispatch } = useContext(GlobalContext);
     const { carouselNumber } = globalState;
     const [direction, setDirection] = useState(0);
-    const [scrollBy, setScrollBy] = useState(0);
     const carousel = document.querySelector('.carouselSlide');
     const hicardiArray = new Array(5).fill('');
     const Number = new Map();
@@ -49,15 +48,11 @@ const Hicardi = () => {
 
     const onScrollEvent = (event,direction) => {
         const scrolled = carousel.scrollLeft;
-        // let timer = null;
-        // clearTimeout(timer);
-        // timer = setTimeout(() => {
-            if(scrolled === carouselNumber[0]) setDirection(0);
-            else if(scrolled === carouselNumber[1]) setDirection(1);
-            else if(scrolled === carouselNumber[2]) setDirection(2);
-            else if(scrolled === carouselNumber[3]) setDirection(3);
-            else if(scrolled === carouselNumber[4]) setDirection(4);
-        // },100)
+        if(scrolled === carouselNumber[0]) setDirection(0);
+        else if(scrolled === carouselNumber[1]) setDirection(1);
+        else if(scrolled === carouselNumber[2]) setDirection(2);
+        else if(scrolled === carouselNumber[3]) setDirection(3);
+        else if(scrolled === carouselNumber[4]) setDirection(4);
     }
 
     return (
@@ -89,7 +84,6 @@ const StyledCarousel = styled.div`
     width:100%;
     height:100vh;
     transition: transform 0.5s ease-in-out;
-    /* transform: ${({direction}) => `translateX(${100 * direction}%)`}; */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 `;
@@ -113,7 +107,7 @@ const StyledHicardi = styled.div`
             height:100vh;
             left:0;
             font-size: 1000%;
-            color: #e5e5e5;
+            color: ${({direction}) => direction === 0 ? `transparent` : '#e5e5e5'};;
         }
         &:nth-child(3) {
             position:absolute;
@@ -121,7 +115,7 @@ const StyledHicardi = styled.div`
             height:100vh;
             right:0;
             font-size: 1000%;
-            color: #e5e5e5;
+            color: ${({direction}) => direction === 4 ? `transparent` : '#e5e5e5'};
         }
         > polyline {
             cursor: pointer;

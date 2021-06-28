@@ -19,4 +19,11 @@ const StyledMailNumber = styled.div``;
 const StyledList = styled.ul`
     ${({theme}) => theme.center};
     color: #989898;
+    
+    > li {
+        list-style: square;
+        &:not(:first-child) {
+            margin-left: 30px;
+        }
+    }
 `;

@@ -18,6 +18,7 @@ const fontSize = {
   TEAM: "54px",
 };
 const colors = {
+  main: "#cf227e",
   white: "#FFF",
   red: "#CC484D",
   yellow: "#FAF300",
@@ -46,4 +47,5 @@ const theme = {
   colors,
   center,
 };
+
 export default theme;

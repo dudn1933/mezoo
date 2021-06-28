@@ -3,10 +3,11 @@ import { createContext, useReducer, useMemo } from 'react';
 const globalInitialState = {
     imageToggle : { hidden: true, step:1, animation:false },
     mousePoint: {show: 0, x: 0, y: 0 },
-    contentToggle: { show: false },
-    pageScrollY: { scrollY: 0, first:0, second:0, third:0},
-    offsetTop: { prodLocation: 0, contentLocation: 0, advantageLocation: 0 },
-    carouselNumber: {0: '', 1:'', 2:'', 3:'', 4:'' }
+    offsetTop: { mainLocation: 0, prodLocation: 0, contentLocation: 0, useLocation: 0, footerLocation: 0 },
+    carouselNumber: {0: '', 1:'', 2:'', 3:'', 4:'' },
+    currentScreenSize: { size: 0 },
+    navigationBar: { show: false },
+    newsBar: { view: false },
 };
 
 const globalReducer = (state, action) => {
@@ -23,16 +24,6 @@ const globalReducer = (state, action) => {
                 ...state,
                 mousePoint: payload,
             }
-        case 'contentChange':
-            return {
-                ...state,
-                contentToggle: payload,
-            }
-        case 'pageScrollValueChange':
-            return {
-                ...state,
-                pageScrollY: payload,
-            }
         case 'offsetTopChange':
             return {
                 ...state,
@@ -42,6 +33,21 @@ const globalReducer = (state, action) => {
             return {
                 ...state,
                 carouselNumber: payload
+            }
+        case 'screenSizeRegister':
+            return {
+                ...state,
+                currentScreenSize: payload
+            }
+        case 'navigationView':
+            return {
+                ...state,
+                navigationBar: payload,
+            }
+        case 'newsView':
+            return {
+                ...state,
+                newsBar: payload,
             }
         default:
             throw new Error('[Error] dispatch - global');
