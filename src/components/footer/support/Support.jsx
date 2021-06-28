@@ -47,9 +47,10 @@ const StyledTitle = styled.div`
     cursor: pointer;
     color:white;
     height:40px;
-    font-size: 35px;
+    font-size: 32px;
     letter-spacing: 1px;
-    ${({theme}) => theme.center};
+    display: flex;
+    justify-content: center;
     text-shadow: ${({theme}) => `2px 2px 2px ${theme.colors.main}`};
 `;
 
